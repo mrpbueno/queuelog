@@ -105,6 +105,7 @@ class Queuelog extends FreePBX_Helpers implements BMO
         //The ajax request
         switch ($command) {
             case "getJSON":
+            case "getQueues":
                 return true;
                 break;
             default:
@@ -148,7 +149,9 @@ class Queuelog extends FreePBX_Helpers implements BMO
                     }
                 }
                 break;
-
+            case "getQueues":
+                return $this->getQueues();
+                break;
             default:
                 return json_encode(['status' => false, 'message' => _("Solicitação Inválida")]);
         }

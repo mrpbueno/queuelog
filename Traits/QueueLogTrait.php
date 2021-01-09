@@ -306,4 +306,14 @@ trait QueueLogTrait
 
         return $data;
     }
+
+    private function getQueues()
+    {
+        $sql = "SELECT extension, descr FROM queues_config ORDER BY extension ASC";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute();
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $data;
+    }
 }

@@ -13,10 +13,12 @@
                                     <i class="fa fa-question-circle fpbx-help-icon" data-for="calldate"></i>
                                 </div>
                                 <div class="col-md-4">
-                                    <input type='date' class="form-control" id="startDate" name="startDate" value="<?php echo empty($_POST['startDate']) ? date('Y-m-d') : $_POST['startDate']; ?>">
+                                    <input type='date' class="form-control" id="startDate" name="startDate"
+                                           value="<?php echo empty($_POST['startDate']) ? date('Y-m-d') : $_POST['startDate']; ?>">
                                 </div>
                                 <div class="col-md-3">
-                                    <input type='time' class="form-control" id="startime" name="startTime" value="<?php echo empty($_POST['startTime']) ? '00:00' : $_POST['startTime']; ?>">
+                                    <input type='time' class="form-control" id="startime" name="startTime"
+                                           value="<?php echo empty($_POST['startTime']) ? '00:00' : $_POST['startTime']; ?>">
                                 </div>
                             </div>
                         </div>
@@ -40,7 +42,8 @@
                                     <i class="fa fa-question-circle fpbx-help-icon" data-for="queuename"></i>
                                 </div>
                                 <div class="col-md-7">
-                                    <input type="text" class="form-control" id="queuename" name="queuename" value="<?php echo $_POST['queuename']; ?>">
+                                    <select class="form-control" id="queuename" name="queuename" required>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -48,7 +51,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <span id="queuename-help" class="help-block fpbx-help-block"><?php echo _("Digite o número da fila")?></span>
+                        <span id="queuename-help" class="help-block fpbx-help-block"><?php echo _("Selecione a fila")?></span>
                     </div>
                 </div>
             </div>
@@ -66,10 +69,12 @@
                                     <i class="fa fa-question-circle fpbx-help-icon" data-for="endDate"></i>
                                 </div>
                                 <div class="col-md-4">
-                                    <input type='date' class="form-control" id="endDate" name="endDate" value="<?php echo empty($_POST['endDate']) ? date('Y-m-d') : $_POST['endDate']; ?>">
+                                    <input type='date' class="form-control" id="endDate" name="endDate"
+                                           value="<?php echo empty($_POST['endDate']) ? date('Y-m-d') : $_POST['endDate']; ?>">
                                 </div>
                                 <div class="col-md-3">
-                                    <input type='time' class="form-control" id="endTime" name="endTime" value="<?php echo empty($_POST['endTime']) ? '23:59' : $_POST['endTime']; ?>">
+                                    <input type='time' class="form-control" id="endTime" name="endTime"
+                                           value="<?php echo empty($_POST['endTime']) ? '23:59' : $_POST['endTime']; ?>">
                                 </div>
                             </div>
                         </div>
@@ -93,3 +98,21 @@
     </div>
     <br/>
 </form>
+
+<script>
+    let dropdown = $('#queuename');
+
+    dropdown.empty();
+
+    dropdown.append('<option value="" disabled></option>');
+    dropdown.prop('selectedIndex', 0);
+
+    const url = 'ajax.php?module=queuelog&command=getQueues';
+
+    // Populate dropdown
+    $.getJSON(url, function (data) {
+        $.each(data, function (key, entry) {
+            dropdown.append($('<option></option>').attr('value', entry.extension).text(entry.extension+' '+entry.descr));
+        })
+    });
+</script>
