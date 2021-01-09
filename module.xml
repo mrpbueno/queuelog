@@ -1,0 +1,26 @@
+<module>
+    <rawname>queuelog</rawname>
+    <repo>unsupported</repo>
+    <name>Queue Log Reports</name>
+    <version>14.0.0.0</version>
+    <category>Reports</category>
+    <Publisher>mrpbueno</Publisher>
+    <info>https://github.com/mrpbueno/queuelog</info>
+    <license>GPLv3+</license>
+    <licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
+    <menuitems>
+        <queuelog>Queue Log Reports</queuelog>
+    </menuitems>
+    <depends>
+        <version>14.0.0</version>
+    </depends>
+    <requirements>
+        <module>queue</module>
+    </requirements>
+    <supported>14.0.0</supported>
+    <updateurl>https://raw.githubusercontent.com/mrpbueno/queuelog/master/queuelog.json</updateurl>
+    <description>Queue Statistics for FreePBX</description>
+    <changelog>
+        *14.0.0.0* Initial Dev Release *beta
+    </changelog>
+</module>
