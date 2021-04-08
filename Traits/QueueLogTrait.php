@@ -90,6 +90,8 @@ trait QueueLogTrait
             ];
         }
 
+        $res = is_array($res) ? $res : null;
+        
         return $res;
     }
 
@@ -131,6 +133,8 @@ trait QueueLogTrait
             'percentage' => number_format($hangup['COMPLETECALLER']*100/$hangup['calls']).' %'
         ];
 
+        $res = is_array($res) ? $res : null;
+        
         return $res;
     }
 
@@ -205,6 +209,8 @@ trait QueueLogTrait
                 $i++;
             }
         }
+        
+        $res = is_array($res) ? $res : null;
 
         return $res;
     }
