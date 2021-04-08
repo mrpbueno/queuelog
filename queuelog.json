@@ -6,7 +6,7 @@
   "publisher": "mrpbueno",
   "license": "GPLv3+",
   "licenselink": "http://www.gnu.org/licenses/gpl-3.0.txt",
-  "changelog": "*14.0.2*Update Trait\n*14.0.1* Initial Dev Release *beta",
+  "changelog": "*14.0.0.2*Update Trait\n*14.0.0.1* Initial Dev Release *beta",
   "category": "Reports",
   "description": "Queue Statistics for FreePBX",
   "depends": {
