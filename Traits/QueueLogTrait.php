@@ -219,6 +219,8 @@ trait QueueLogTrait
             $previous_cumulative = $cumulative_calls;
         }
 
+        $res = is_array($res) ? $res : null;
+        
         return $res;
     }
 
@@ -297,6 +299,8 @@ trait QueueLogTrait
                 : '0.00 %'
         ];
 
+        $res = is_array($res) ? $res : null;
+        
         return $res;
     }
 
@@ -408,6 +412,8 @@ trait QueueLogTrait
             error_log("QueueLog => Erro ao buscar detalhes de chamadas: " . $e->getMessage());
             return [];
         }
+        
+        $res = is_array($res) ? $res : null;
 
         $results = [];
         $currentCall = [];
