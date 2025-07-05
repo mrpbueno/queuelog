@@ -16,14 +16,7 @@
   "supported": {
     "version": "14.0"
   },
-<<<<<<< HEAD
-  "location": "https://github.com/mrpbueno/queuelog/archive/14.0.0.1.zip",
-  "md5sum": "26bd7294150faaa3db2cb3e4914e54b8",
-  "packaged": "1590763295"
-}
-=======
   "location": "https://github.com/mrpbueno/queuelog/archive/refs/tags/14.0.0.2.zip",
   "md5sum": "86cf530728614361f18f4790d9204f9c",
   "packaged": "1617921140"
 }
->>>>>>> 7f0388dae1d01848249547a1e3dd2e182fc4115b
